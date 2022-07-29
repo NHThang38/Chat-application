@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Login</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+	
+	<link rel="stylesheet" href="/style.css">
+
+	</head>
+	<body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="xh">
+                            <img class="image" src="/images/zalo4.png" style="padding-left: 10xp;">
+                            <div>
+                                Đăng nhập tài khoản Zalo<br>
+                                để kết nối với ứng dụng Zalo Chat
+                            </div>
+                           
+                        <form class="box" action="/dangnhap" method="post" enctype="multipart/form-data">
+                            
+                           
+                            
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="col-md-12" style="margin-top: 15px;">  
+                                    <b>Đăng nhập bằng số điện thoại</b></div>
+                                <div class="col-md-1" style="margin-top: 45px;margin-left: 15px;">
+                                    <img class="image" src="/images/dienthoai.png">
+                                </div>
+                               
+                                <div class= "col-md-2" style="margin-top: 55px;">
+                                    <p id =demo>84+</p>
+                                   
+                                </div>
+                                <div style="margin-top: 50px;">
+                                    <input type="number" name="sdt" placeholder="Số điện thoại"> 
+                                </div>
+                            </div>
+                            
+                            <div class="row" >
+                                <div class="col-md-1" style="margin-top: 15px;margin-left: 22px;"> 
+                                    <img class="image" src="/images/mk.png">
+                                </div>
+                                <div class="col-md-1" style="margin-top: 20px;">
+                                    <input type="password" name="mk" placeholder="Password"> 
+                                </div>
+                                <div class="col-md-12">
+                                    <p style="color: red;size:1px;"><%=a%> &nbsp</p>
+                                </div>
+                            </div>
+                            <div style="color: tomato;"></div>
+                            <div >
+                           
+                            <input type="submit" value="Đăng nhập với mật khẩu" href="#">
+                            </div>
+                            <div >
+                                <a class="forgot text-muted" href="/emailxacthuc">quên mật khẩu?</a>
+                            </div>
+                          
+        
+                        </form>
+                        <div style="margin-top: 20px;">
+                        Bạn chưa có tài khoản?<u><a style="color: rgb(34, 110, 197);" href="/dangki" >Đăng ký ngay!</a></u>
+                        </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>

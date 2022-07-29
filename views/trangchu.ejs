@@ -1,0 +1,574 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trang Chủ</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css"
+        integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="/styleTrangChu.css">
+</head>
+
+<body>
+   
+
+    <div class="container-fluid">
+        <div class="row">
+
+            <!--    INFO -->
+            <div class="col-md-1 info" style="background: linear-gradient(to right, #2193b0, #6dd5ed);">
+
+                <!-- INFO -->
+                <div class="action">
+                    <ul class="ul_action">
+                        <li class="li_action" style="padding-top:40px; padding-bottom: 5px;">
+                            <a href="" class="action_link avatar" data-toggle="modal" data-target="#exampleModal4">
+                                <!-- Anh dai dien -->
+                                <img class="img_avt" src="<%=user[0].anh%>" alt="" id="anhCuaToi"/>
+                                <!-- Ten -->
+                                <p class="name_user"><%=user[0].ten%></p>
+
+                                <input type="hidden" value="<%=user[0].id%>" id="myId"/>
+
+                            </a>
+                        </li>
+
+                        <!-- <li class="li_action">
+                            <a href="" class="action_link">
+                                <i class="fa fa-sms icon_action "></i>
+                                <p>Tin nhắn </p>
+                            </a>
+                        </li> -->
+                        <li class="li_action">
+                            <a href="" class="action_link" data-toggle="modal" data-target="#exampleModal3">
+                                <i class="fa fa-address-book icon_action"></i>
+                                <!-- Dung if else hien thi thong bao... -->
+                             
+                                <i class="fab fa-angellist"
+                                    style="color:rgb(214, 8, 8) ; font-size:30px ;font-weight: 500;">!</i>
+ 
+                                <p style="margin: 0 !important; padding: 0 !important;">Thông báo</p>
+
+                            </a>
+                        </li>
+
+                        <li class="li_action">
+                            <a href="" class="action_link">
+                                <i class="fa fa-cog icon_action"></i>
+                                <p>Cài đặt</p>
+                            </a>
+                        </li>
+                        <li class="li_action">
+                            <a href="/taokhoa" class="action_link">
+                                
+                                <i class="fa fa-lock icon_action"></i>
+                                <p>Khoá tài khoản</p>
+                            </a>
+                        </li>
+                        <li class="li_action">
+                            <a href="/logout" class="action_link">
+                                <i class="fa fa-sign-out-alt icon_action"></i>
+                                <p>Đăng xuất</p>
+                            </a>
+                        </li>
+                    </ul>
+
+
+
+                    <!--  -->
+                </div>
+            </div>
+            <!-- friendS -->
+            <div class="col-md-3" style="padding: 0 !important; margin: 0 !important;">
+                <!-- Name web -->
+                <div class="">
+                    <img src="/images/zalo4.png" alt="" style="margin-left: 70px; width: 150px; height: 40px;  ">
+                    <p style="color: rgb(20, 16, 16) ; margin-left: 32px; font-size: 17px; font-weight: 500;">Chào mừng
+                        bạn <%=user[0].ten%></p>
+                </div>
+                <!-- BANBE -->
+                <div class="content_center">
+                    <!-- Add -->
+                    <div class="add row " style="width: 300px; margin:10px 0;">
+                        <div class="col-md-6 add_friends">
+                            <!-- Ket ban  -->
+                            <a class="link_add" href="" data-toggle="modal" data-target="#exampleModal">
+                                <span class="text_add">Them ban</span>
+                                <div>
+                                    <i class="fa fa-user-alt icon_add"></i>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-6">
+                            <!-- Tao nhom -->
+                            <a class="link_add" href="" data-toggle="modal" data-target="#exampleModal2">
+                                <span class="text_add">Them Nhom</span>
+                                <div>
+                                    <i class="fa fa-users icon_add"></i>
+                                </div>
+                            </a>
+
+                        </div>
+
+                    </div>
+                    <!--search  -->
+                    <div class="search ml-3">
+                        <div class="input-group input-group-sm" style="width: 82%; margin: 13px 0;">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="inputGroup-sizing-sm">
+                                    <i style="font-size: 20px;" class="fa fa-search"></i>
+                                </span>
+                            </div>
+                            <input type="text" class="form-control" aria-label="Small"
+                                aria-describedby="inputGroup-sizing-sm">
+                        </div>
+                    </div>
+
+                    <div class="friend_messages">
+                        <!-- Lấy ds bạn bè từ data về  -->
+                        <ul class="ul_friend_messages" style="padding: 0;">
+                    
+                                
+                            <%for(let i = 0 ; i < ban.length; i++) {%>
+                            <li class="li_friend_messages  ">
+                                <!-- Click toàn bộ thẻ a -->
+                                <!-- 1 người -->
+                                <a class="link_friend_messages  friend_messages_active d-flex " href="/getMess/<%=id%>/<%=Room[i].idTroChuyen%>">
+                                    <img class="img_friend_messages" src="<%=ban[i].anh%>" alt="">
+                                    <div class="content_friend_messages">
+                                        <!-- ten ban be lay -->
+                                        <p class="name_friend_messages" style="margin: 0; font-size: 18px;">   <%=ban[i].ten%>
+                                        </p>
+                                        <i class="fa fa-circle online" style="color:#86c541 ; font-size:10px ;"></i>
+                                        <span>Online</span>
+                                    </div>
+                                </a>
+                            </li>
+                            <%}%>
+                            <%for(let i = 0 ; i < arrNC.length; i++) {%>
+                                <li class="li_friend_messages  ">
+                                    <!-- Click toàn bộ thẻ a -->
+                                    <!-- 1 người -->
+                                    <a class="link_friend_messages  friend_messages_active d-flex " href="/getMessNC/<%=id%>/<%=arrNC[i].id%>">
+                                        <img class="img_friend_messages" src="<%=arrNC[i].anh%>" alt="">
+                                        <div class="content_friend_messages">
+                                            <!-- ten ban be lay -->
+                                            <p class="name_friend_messages" style="margin: 0; font-size: 18px;">   <%=arrNC[i].tenTroChuyen%>
+                                            </p>
+                                            <i class="fa fa-circle online" style="color:#86c541 ; font-size:10px ;"></i>
+                                            <span>Online</span>
+                                        </div>
+                                    </a>
+                                </li>
+                                <%}%>
+                          
+                        
+                            
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8 content_chat"
+                style="border: 1px solid rgb(72, 141, 168); padding: 0 !important; margin: 0 !important;background: rgba(220, 239, 245, 0.712) ">
+                <div class="content_chat_top d-flex justify-content-between align-items-center  py-3"
+                    style="background: rgba(220, 239, 245, 0.712); border-bottom: 4px solid rgb(224, 234, 235);">
+                    <div class="info_fr">
+                        <a class=" d-flex " href="">
+                            <%if(idRoom!=null){%>
+                            <%for(let i = 0 ; i < arraybc.length; i++) {%>
+                            <input type="hidden" value="<%=arraybc[i].id%>" id="freId"/>
+                            <img class="img_friend_content_chat" src="<%=arraybc[i].anh%>" alt="" width="60px" height="60px"
+                                style="border-radius: 50%; margin: 0 13px;" id="myImg">
+                            <div class="content_friend_messages" style="margin-top: 14px;">
+                                <!-- ten ban be lay -->
+                                <p class="name_friend_messages"
+                                    style="margin: 0; font-size: 18px; font-weight: 500;color: rgb(29, 46, 88);"><%=arraybc[i].ten%>
+                                
+                                </p>
+                                <!-- <i class="fa fa-circle online" style="color:#86c541 ; font-size:10px ;"></i> -->
+                                <!-- <span>Online</span> -->
+                            </div>
+                            <%}%>
+                            <%}%>
+                            <%for(let i = 0 ; i < arrChiTietNC.length; i++) {%>
+                                <img class="img_friend_content_chat" src="<%=arrChiTietNC[i].anh%>" alt="" width="60px" height="60px"
+                                    style="border-radius: 50%; margin: 0 13px;" id="myImg">
+                                <div class="content_friend_messages" style="margin-top: 14px;">
+                                    <!-- ten ban be lay -->
+                                    <p class="name_friend_messages"
+                                        style="margin: 0; font-size: 18px; font-weight: 500;color: rgb(29, 46, 88);"><%=arrChiTietNC[i].tenTroChuyen%>
+                                    
+                                    </p>
+                                    <!-- <i class="fa fa-circle online" style="color:#86c541 ; font-size:10px ;"></i> -->
+                                    <!-- <span>Online</span> -->
+                                </div>
+                                <%}%>
+                   
+                        </a>
+                    </div>
+                    <div class="icons_content_chat_top" style="margin-left: 400px;">
+                        <i class="fa fa-users icons_chat_top"
+                            style="font-size: 25px; color:rgba(15, 15, 15, 0.795); margin-right: 10px;"></i>
+                        <i class="fa fa-cog icons_chat_top"
+                            style="font-size: 25px; color:rgba(15, 15, 15, 0.795 ); margin-right: 10px"></i>
+                        <i class="fa fa-bars"
+                            style="font-size: 25px; color:rgba(15, 15, 15, 0.795 ) ;margin-right: 10px"></i>
+                    </div>
+                    <br>
+                </div>
+                <!--Khung chat  -->
+                <div class="content_chat_center">
+                    <%for(let i = 0 ;( i < chatArr.length)  ; i++) {%>
+                        <% if( chatArr[i].idSender != id ){%>                   
+                            <%for(let j = 0 ;( j < arraybc.length)  ; j++) {%>
+                                <%if(idRoomNC!=null&& arraybc[j].id==chatArr[i].idSender){%>
+                                    <div class="received_chats ">
+                                        <div class="received_chats_img">
+                                            <img src="<%= arraybc[j].anh %>" alt="">
+                                        </div>
+                                        <div class="received_msg">
+                                            <div class="received_msg_inbox">
+                                                <!-- chat -->
+                                                <%let s = chatArr[i]. Texts; let ktText = s.substring(s.length-4,s.length);
+                                                    let dox = s.substring(s.length-5,s.length)%>
+                                                <%if(ktText==".png"||ktText==".jpg"){%>
+                                                    <p><img src="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>" alt="" style="width: 150px; height: 100px;"></p>
+                                                <%}else if(dox ==".docx"){%>
+                                                    <p><a href="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>"><%=chatArr[i]. Texts%></a></p>
+                                                
+                                                <%}else if(ktText==".mkv"||ktText==".mp4"){%>
+                                                    <p>
+                                                        <video width="150" height="100" controls>
+      
+                                                         <source src="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>" type="video/ogg">
+                                                        
+                                                         </video>
+                                                    </p>
+                                                    
+                                                <%}else{%>
+                                                    <p><%=chatArr[i]. Texts%></p>
+                                                <%}%>
+                                                <!-- time -->
+                                                <span class="time"><%=chatArr[i]. times%></span>
+                
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <%j=1+arraybc.length%>
+                                    <%}if(idRoom!=null&& arraybc[j].id==chatArr[i].idSender){%>
+                                    <div class="received_chats ">
+                                        <div class="received_chats_img">
+                                            <img src="<%= arraybc[j].anh %>" alt="">
+                                        </div>
+                                        <div class="received_msg">
+                                            <div class="received_msg_inbox">
+                                                <!-- chat -->
+                                                <%let s = chatArr[i]. Texts; let ktText = s.substring(s.length-4,s.length);
+                                                    let dox = s.substring(s.length-5,s.length)%>
+                                                <%if(ktText==".png"||ktText==".jpg"){%>
+                                                    <p><img src="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>" alt="" style="width: 150px; height: 100px;"></p>
+                                                <%}else if(dox ==".docx"){%>
+                                                    <p><a href="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>"><%=chatArr[i]. Texts%></a></p>
+                                                    <%}else if(ktText==".mkv"||ktText==".mp4"){%>
+                                                        <p>
+                                                            <video width="150" height="100" controls>
+          
+                                                             <source src="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>" type="video/ogg">
+                                                            
+                                                             </video>
+                                                        </p>
+                                                <%}else{%>
+                                                    <p><%=chatArr[i]. Texts%></p>
+                                                <%}%>
+                                                <!-- time -->
+                                                <span class="time"><%=chatArr[i]. times%></span>
+                
+                                            </div>
+                                        </div>
+                                    </div>
+                                <%}%>
+                   
+                    <%}%>
+                    
+                    <%}else{%>
+                        
+                    <div class="outgoing_chats">
+                        <div class="outgoing_chat_msg">
+                         
+                            <!-- chat -->
+                            <%let s = chatArr[i]. Texts; let ktText = s.substring(s.length-4,s.length);
+                            let dox = s.substring(s.length-5,s.length)%>
+                            <%if(ktText==".png"||ktText==".jpg"){%>
+                                <p><img src="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>" alt="" style="width: 150px; height: 100px;"></p>
+                                <%}else if(dox ==".docx"){%>
+                                    <p><a href="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>"><%=chatArr[i]. Texts%></a></p>
+                                    <%}else if(ktText==".mkv"||ktText==".mp4"){%>
+                                        <p>
+                                            <video width="150" height="100" controls>
+
+                                             <source src="https://s3.ap-southeast-1.amazonaws.com/baitap.gg/<%= chatArr[i]. Texts%>" type="video/ogg">
+                                            
+                                             </video>
+                                        </p>
+                                <%}else{%>
+                                    <p><%=chatArr[i]. Texts%></p>
+                                <%}%>
+                            <!-- time -->
+                            <span class="time"><%=chatArr[i]. times%></span>
+
+                        </div>
+                        <div class="outgoing_chats">
+                            <img class="outgoing_chats_img" src="<%=user[0].anh%>" alt="">
+                        </div>
+                    </div>
+                    <%}%>
+                <%}%>
+                </div>
+                <div class="content_chat_bottom">
+                    <form action="/sendFile" method="post" enctype="multipart/form-data">
+                        <input type="file" name="sendfile" id="fileSender"/>
+                        <input type="hidden" name="id" value="<%=id%>">
+                        <input type="hidden" name="idRoom" value="<%=idRoom%>">
+                        <input type="hidden" name="idRoomNC" value="<%=idRoomNC%>">
+                        <input type="hidden" value="<%=hinhanhSend%>" id="HinhAnhSend">
+                        <button class="btn btn-primary" onclick="sendFile()" type="submit" id="inputGroup-sizing-default">Send</button>
+                    </form>
+
+                    <form id="chat-form" >
+                    <div class="input-group input-group my-1 ">
+                        <input type="text" class="form-control" aria-label="Default" name="texts"
+                            aria-describedby="inputGroup-sizing-default" id="msg">
+                            <input type="hidden" name="id" value="<%=id%>">
+                            <input type="hidden" name="idRoom" value="<%=idRoom%>" id="idRoom">
+                            <input type="hidden" value="<%=idRoomNC%>" id="idRoomNC">
+                        <div class="input-group-prepend">
+                            <button class="btn btn-success" type="submit" id="inputGroup-sizing-default">Gửi</button>
+                        </div>
+                    </div>
+                </form>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- Modal Thêm bạn-->
+   
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Thêm Bạn</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="row" style="margin: 0 ">
+
+                        <div class="col-md-1" style="margin-left: 15px;">
+                            <img class="image" src="/images/dienthoai.png">
+                        </div>
+
+                        <div class="col-md-2" style="margin-top: 8px;">
+                            <p>84+</p>
+
+                        </div>
+                        <div style="margin-top: 6px;">
+                            <form action="/search" method="post" enctype="multipart/form-data">
+                                <input type="text" name="sdt" placeholder="so dien thoai">
+                                <input type="hidden" name="id" value="<%=id%>">
+                                <input type="submit" value="search" class="btn btn-primary">
+                            </form>
+                        </div>
+                    </div>
+                </div>
+             
+                <%for(let i = 0; i< search.length ;i++){%>
+                <%if(search[i].id!=id){%>
+                <div>
+                    <p style="padding-left: 20px; font-size: 20px; color: #00657c;"> Kết quả:</p>
+               
+                    <a class="link_friend_messages link_useradd  d-flex " href=""
+                        style="width: 80%; text-align: center; margin-left: 60px;">
+                       
+                         
+                            
+                        <img class="img_friend_messages img_useradd" src="<%=search[i].anh%>" alt="">
+                        <div class="content_friend_messages content_useradd">
+                            <!-- ten ban be lay -->
+                            <p class="name_friend_messages name_useradd " style="margin: 0; font-size: 18px;">     <%=search[i].ten%>  
+                            </p>
+                        </div>
+                        
+                      
+                    </a>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                    <a href="/them/<%=id%>/<%=search[i].id%>" class="btn btn-primary">Add</a>
+                </div>
+                <%}%>
+                <%}%>
+   
+            </div>
+           
+        </div>
+    </div>
+ 
+    <!-- Modal2 Them Nhom -->
+    <div class="modal fade" id="exampleModal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Them Nhom</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form action="/addNhomChat" method="POST" enctype="multipart/form-data">
+                        Ảnh Nhóm    <input type="file" name="fileNhom"/>
+                        <input type="hidden" name="id" value="<%=id%>">
+                    
+                    
+                        <div class="form-group">
+                            <input type="text" class="form-control" aria-label="Small"
+                            aria-describedby="inputGroup-sizing-sm" name="tenNhom" placeholder="Tên nhóm">
+                            <%for(let i = 0; i< arrTN.length ;i++){%>
+                                
+                                <div>
+
+                                    <a class="link_friend_messages link_useradd  d-flex " href=""
+                                        style="width: 80%; text-align: center; margin-left: 60px;">
+                                        <div class="content_friend_messages content_useradd">
+                                            <input type="checkbox" id="hobby" name="stuhobbies" value="<%=arrTN[i].id%>" class="tenNhom"/>
+                                        </div>
+                                         
+                                            
+                                        <img class="img_friend_messages img_useradd" src="<%=arrTN[i].anh%>" alt="">
+                                        <div class="content_friend_messages content_useradd">
+                                            
+                                            <p class="name_friend_messages name_useradd " style="margin: 0; font-size: 18px;"> <%=arrTN[i].ten%>
+                                            </p>
+                                        </div>
+                                       
+                                        
+                                    </a>
+                                </div>
+                               
+                            <%}%>
+                       </div>
+                       <input type="submit" value="Tạo Nhóm" class="btn btn-primary">
+                    </form>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                </div>
+                   
+           
+            </div>
+        </div>
+    </div>
+    <!-- Modal3  Modal Thong bao-->
+    <div class="modal fade" id="exampleModal3" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Thong bao</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Bạn có lời mời kết bạn</p>
+                    <%for(let i = 0 ; i < kbUser.length ; i++) {%>
+                        <div>
+                            <img width="50px" src=<%=kbUser[i].anh%>>
+                            <span><%=kbUser[i].ten%> </span>
+                            <a style="float: right;" class="btn btn-primary" href="/luubanbe/<%=id%>/<%=kbUser[i].id%>">Thêm</a>
+                        </div>
+                    <%}%>
+                   
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Modal4  Modal Thong tin ca nhan-->
+    <div class="modal fade" id="exampleModal4" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal Profile</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <form action="/trangchu/<%=user[0].id%>" method="post" enctype="multipart/form-data">
+                    <div class="modal-body">
+                        <div class="modal-header"style="margin-left: 140px;" >
+                            <img src="<%=user[0].anh%>" alt="avatar" class="img-responsive" style="width: 100px; height: 100px;"/>                        
+                          </div>
+                          <div>
+                            <input id="anh" type="file" name="profile" accept="image/*" style="width: 100px; margin-left: 160px;"/>
+                          </div>
+                          <!--Body-->
+                          <div class="modal-body text-center mb-1">
+                            
+                            <div class="md-form ml-0 mr-0">
+                                <label data-error="wrong" data-success="right" for="form29" class="ml-0">Ten </label>
+                                <input type="text" value="<%=user[0].ten%>" name="ten" class="form-control form-control-sm validate ml-0">
+                            </div>
+                            <div class="md-form ml-0 mr-0">
+                                <label data-error="wrong" data-success="right" for="form29" class="ml-0">So Dien Thoai </label>
+                                <input type="text" value="<%=user[0].sdt%>" name="sdt" class="form-control form-control-sm validate ml-0" readonly>
+                            </div>
+                            <div class="md-form ml-0 mr-0">
+                                <label data-error="wrong" data-success="right" for="form29" class="ml-0">Ngay sinh </label>
+                                <input type="text" value="<%=user[0].ngaysinh%>" name="ngaysinh" class="form-control form-control-sm validate ml-0">
+                            </div>
+                            <div class="md-form ml-0 mr-0">
+                                <label data-error="wrong" data-success="right" for="form29" class="ml-0">Gioi tinh </label>
+                                <input type="text" value="<%=user[0].gioitinh%>" name="gioitinh" class="form-control form-control-sm validate ml-0">
+                            </div>                                          
+                           </div>
+                           <div class="modal-footer">
+                               <button type="button" class="btn btn-secondary" data-dismiss="modal">Hủy</button>
+                               <input type="submit" class="btn btn-secondary" value="Update">
+                           </div>
+                  </form>
+            </div>
+        </div>
+    </div>
+   
+</body>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+    crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="/main.js"></script>
+    
+</html>

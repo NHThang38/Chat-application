@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    
+        <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+    
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+        <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+
+        <link rel="stylesheet" href="/trangchu.css">
+    </head>
+    <script>
+        function myFunction() {
+          alert("them ban thanh cong");
+        }
+        </script>
+    <body>
+
+        
+        <form action="/search" method="post" enctype="multipart/form-data">
+            <input type="text" name="sdt" placeholder="so dien thoai">
+            <input type="hidden" name="id" value="<%=id%>">
+            <input type="submit" value="search">
+        </form>
+        <h1>ket qua search</h1>
+        <%for(let i = 0; i< search.length ;i++){%>
+            <%if(search[i].id!=id){%>
+             <img width="50px" src=<%=search[i].anh%>>
+            <%=search[i].ten%>  
+            <a href="/them/<%=id%>/<%=search[i].id%>" class="btn btn-primary">Add</a>
+            <%}%>
+        <%}%>
+        
+        
+      
+        <table style="border: 1px solid steelblue ;">
+            <tr style="border: 1px solid steelblue " >
+                <th>ten</th>
+                <th>so dien thoai</th>
+            </tr>
+            <%for(let i = 0 ; i < kbUser.length ; i++) {%>
+            <tr>
+                <td><%=kbUser[i].ten%> </td>
+                <td><img width="50px" src=<%=kbUser[i].anh%>> </td>
+                <td><a onclick="myFunction()" href="/luubanbe/<%=id%>/<%=kbUser[i].id%>">them</a> </td>
+            </tr>
+            <%}%>
+        </table>
+
+        <h1>ban be</h1>
+      
+        <%for(let i = 0 ; i < ban.length; i++) {%>
+            <div>
+                <a href="/getMess/<%=id%>/<%=Room[i].id%>"> <img width="50px" src=<%=ban[i].anh%>></a>
+                <%=ban[i].ten%>
+            
+             
+            </div>
+            <%}%>
+  
+       
+    </body>
+</html>

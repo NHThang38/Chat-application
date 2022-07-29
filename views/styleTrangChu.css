@@ -1,0 +1,281 @@
+
+/*  */
+body{
+    box-sizing: border-box;
+}
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+  }
+
+a{
+    text-decoration: none !important;
+}
+.tenNhom{
+    margin-top: 15px;
+}
+/*  */
+
+.info{
+    padding: 0;
+}
+.ul_action{
+    margin: 0;
+    padding: 0;
+}
+.li_action{
+ 
+    border: 1px solid rgb(255, 255, 255);
+    text-decoration: none;
+    list-style: none;
+    transition: all 0.5s ;
+ 
+}
+.li_action:hover{
+    background-color: rgba(199, 199, 199, 0.397);
+}
+
+.action_link{
+    display: block;
+    text-align: center;
+    color: rgba(226, 226, 226, 0.836);
+    text-decoration: none !important;
+    transition: all 0.5s ;
+    width: 100%;
+    height: 102px;
+    /* padding-bottom: 20px;
+    padding-top: 20px; */
+    
+}
+.action_link:hover{
+    color: rgb(202, 202, 202);
+}
+
+.icon_action{
+   text-align: center;
+   padding-top: 18px;
+   font-size: 35px;
+   transition: all 0.5s ;
+}
+.action_link:hover .icon_action{
+    color: rgb(31, 28, 28);
+}
+.avatar{
+ 
+ text-decoration: none;
+   width: 100%;
+   height: 100%;
+   padding: 0;
+   margin: 0;
+ 
+}
+.name_user{
+    margin: 0;
+    padding-bottom: 10px;
+    color: whitesmoke;
+    transition: all 0.5s ;
+}
+a:hover .name_user{
+    color: brown;
+}
+.img_avt{
+    image-rendering: pixelated;
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+}
+.action_link{
+    display: block;
+    text-align: center;
+    color: rgba(226, 226, 226, 0.836);
+    text-decoration: none !important;
+    transition: all 0.5s ;
+    /* padding-bottom: 20px;
+    padding-top: 20px; */
+}
+
+/* friendS */
+.content_center{
+    height: 80%;
+}
+.add_friends{
+    display:flex;
+}
+.link_add{
+    display:flex;
+    width: 120px;
+    height: 45px;
+    border: 1px solid rgb(22, 20, 18);
+    vertical-align:middle;
+    transition: all 0.5s;
+}
+.link_add:hover{
+    background: #7dd5e9d3;
+    border: 1px solid rgb(196, 2, 60);
+}
+.text_add{
+    font-size: 12px;
+    font-weight: 600;
+    margin-top: 11px;
+    padding: 0px 5px;
+    color: #e92929;
+    vertical-align:middle;
+}
+
+.icon_add{
+    display: inline-block;
+    padding: 3px 0;
+    font-size: 28px;
+    color: rgba(15, 15, 15, 0.795);
+}
+
+.ul_friend_messages{
+    width: 100%;
+    height: 555px;
+ list-style: none;   
+ /* margin-top: 5px; */
+ /* Thanh ngang */
+ overflow-y: scroll;
+ overflow-y:auto 
+}
+.li_friend_messages{
+    width: 94%;
+}
+
+
+.link_friend_messages{
+    /* background-color: #f4f5f7; */
+    width: 100%;
+    transition: all 0.5s;
+    padding: 10px 0;
+}
+.friend_messages_active {
+    background-color: #63c0d4bb;
+}
+
+.link_friend_messages:active{
+    /* mau giong zalo */
+    /* background-color: #e5efff; */
+    background-color: #63c0d4bb;
+}
+.link_friend_messages:hover{
+    /* background-color: #e5efff; */
+    background-color: #63c0d4bb;
+}
+
+/* thiet scroll */
+
+.ul_friend_messages::-webkit-scrollbar {
+    width: 10px;
+  
+}
+
+.ul_friend_messages::-webkit-scrollbar{
+    width: 10px;
+    
+    background-color: rgb(187, 197, 197);
+}
+.ul_friend_messages::-webkit-scrollbar-thumb{
+    background-color: #63c0d4bb;
+    width: 10px ;
+    height: 10px !important;
+    border-radius:4px ;
+}
+
+
+.img_friend_messages{
+    image-rendering: pixelated;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    margin: 10px;
+   margin-left: 15px;
+
+    /*  width="50px" height="50px" style="border: 1px solid; border-radius: 50%; margin: 1px;" */
+}
+.content_friend_messages{
+    margin-top: 10px;
+}
+
+/* Khung 3 */
+.content_chat_center{
+    width: 100%;
+    height: 540px;
+    background: rgba(255, 250, 250, 0.795)  ;
+   overflow-y: scroll;
+}
+
+/* Thanh scroll  */
+.content_chat_center::-webkit-scrollbar {
+    width: 10px;
+  
+}
+
+.content_chat_center::-webkit-scrollbar{
+    width: 10px;
+    
+    background-color: rgb(187, 197, 197);
+}
+
+/* Chat */
+.received_chats{
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin-top:10px ;
+    margin-left: 10px;
+}
+.received_chats_img img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50% ;
+}
+.received_msg{
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: top;
+    width: 92%; 
+}
+.received_msg_inbox{
+    width: 57%;
+}
+.received_msg_inbox p{ 
+    background: #cca4a4 none repeat  scroll 00;
+    border-radius: 10px;
+    color: #0f0c0c;
+    font-size: 15px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+.time{
+    color: #777;
+    display: block;
+    font-size: 12px;
+    margin: 8px 0 0;
+}
+.outgoing_chats{
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    overflow: hidden;
+    margin-right: 10px;
+}
+.outgoing_chat_msg{
+    padding-right: 10px;
+}
+.outgoing_chat_msg p{
+    background: #5f99d3 none repeat scroll 0 0;
+    color: #ffff;
+    border-radius: 10px;
+    margin: 0;
+    padding: 5px 10px 5px 12px;
+    width: 100%;
+}
+.outgoing_chats_img{
+    width: 50px;
+    height: 50px;
+    border-radius: 50% ;
+}

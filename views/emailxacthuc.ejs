@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+  <head>
+  	<title>Email-Vertify</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js">
+	
+	<link rel="stylesheet" href="/style.css">
+
+	</head>
+    <script>
+    </script>
+	<body>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="xh">
+                            <img class="image" src="/images/zalo4.png" style="padding-left: 10xp;">
+                            <div>
+                                Nhập Số điện thoại đăng ký<br>
+                                để xác thực tài khoản
+                            </div>
+                        <div class="box">
+
+                      
+                        <form  action="/mail-reset-pass" method="post" enctype="multipart/form-data">
+                                                                                  
+                            <div class="row" style="margin-top: 30px;">
+                                <div class="col-md-12" style="margin-top: 15px;">  
+                                                                 
+                                   
+                                    <div class="col-md-4" style="margin-top: 30px;"> 
+                                        <div style="margin-left: 15px;" >
+                                            SDT:
+                                        </div>
+                                     
+                                    </div> 
+                                    <div class="col-md-8" style="margin-top: 30px;">  
+                                        <input type="text" name="sdt" placeholder="Số điện thoại" style="margin-right: 30px;"id="txtemail">
+                                    </div>                                   
+                                    <div class="col-md-12"style="margin-top: 20px;">
+                                        <p style="color: red;size:1px;"><%=a%> &nbsp</p>
+                                    </div>
+                                    <div class="col-md-12">
+                           
+                                        <input type="submit" value="Xác thực" >
+                                    </div>
+
+                                    <div class="col-md-12">
+                           
+                                        đăng nhập tài khoản tại đây: <u><a href="/">Đăng nhập</a></u>
+                                    </div>
+                                                              
+                          
+        
+                        </form>
+                    </div>
+                 
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+    </body>
+</html>
